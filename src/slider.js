@@ -7,7 +7,9 @@ $(document).ready(function () {
     slidesToScroll: 1,
     autoplay: true, // Tự động chuyển slide
     autoplaySpeed: 3000, // Tốc độ tự động chuyển 3 giây
-    nextArrow: '<button type="button" class="slick-next">></button>', // Nút next
-    prevArrow: '<button type="button" class="slick-prev"><</button>', // Nút prev
+    nextArrow:
+      '<button type="button" class="slick-next"><img class="ml-6" src="./src/image/icon/ArrowShort_Right.svg" alt="Next" /></button>',
+    prevArrow:
+      '<button type="button" class="slick-prev"><img style="margin-left: -16px" src="./src/image/icon/ArrowShort_Left.svg" alt="Previous" /></button>',
   });
 });

@@ -20,11 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
+    // Đảm bảo tất cả giá trị có 2 chữ số
+    const paddedHours = String(hours).padStart(2, "0");
+    const paddedMinutes = String(minutes).padStart(2, "0");
+    const paddedSeconds = String(seconds).padStart(2, "0");
+
     // Cập nhật HTML với giá trị mới
     document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+    document.getElementById("hours").textContent = paddedHours;
+    document.getElementById("minutes").textContent = paddedMinutes;
+    document.getElementById("seconds").textContent = paddedSeconds;
 
     // Nếu countdown đã hoàn thành
     if (timeDifference < 0) {

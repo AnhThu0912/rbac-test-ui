@@ -36,8 +36,14 @@
 }
 
 @font-face {
-  font-family: "SVN-Sofia Pro";
+  font-family: "SVN-Sofia Pro Bold";
   src: url("./fonts/Sofia-Pro-Bold-Az.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "SVN-Sofia Pro";
+  src: url("./fonts/Sofia-Pro-Regular-Az.ttf") format("truetype");
   font-weight: normal;
 }
 
@@ -109,6 +115,23 @@ ul {
   -webkit-text-fill-color: transparent;
 }
 
+/* HEADER */
+
+.menu-link.active {
+  color: #fff;
+  position: relative;
+}
+
+/* .menu-link.active::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  width: 2px;
+  background-color: #25a7f4;
+  height: 20px;
+  top: -28px;
+} */
+
 /* timeline css */
 .text-orange {
   color: #ed783a;
@@ -133,6 +156,7 @@ ul {
     rgba(255, 255, 255, 0.02) 100.98%
   );
   width: 100%;
+  transition: height 0.3s ease;
 }
 
 .timeline-item h3 {
@@ -195,8 +219,11 @@ ul {
 .timeline-date {
   display: flex;
   flex-direction: column;
-  margin-right: 40px;
+  justify-content: flex-start;
   align-items: center;
+  position: relative;
+  transition: height 0.3s ease;
+  margin-right: 40px;
 }
 
 .timeline-date span:nth-of-type(1),
@@ -223,12 +250,10 @@ ul {
 
 /* Border có thể mở rộng khi expand */
 .border-expand {
-  height: 50px;
   width: 2px;
-  background-color: #fff;
-  transition: height 0.3s ease;
-  display: inline-block;
-  vertical-align: middle;
+  background-color: rgba(217, 217, 217, 1);
+  box-shadow: 0px 0px 4px 1px rgba(217, 217, 217, 1);
+  opacity: 0.3;
   margin-top: 24px;
 }
 
@@ -272,7 +297,7 @@ ul {
 /* SLIDER */
 
 .slick-slider {
-  width: 80%;
+  width: 100%;
   position: relative;
 }
 
@@ -300,11 +325,11 @@ ul {
 }
 
 .slick-prev {
-  left: 24px; /* Cách ảnh 24px bên trái */
+  left: 24px;
 }
 
 .slick-next {
-  right: 24px; /* Cách ảnh 24px bên phải */
+  right: 24px;
 }
 
 .slick-prev:hover,
@@ -312,28 +337,50 @@ ul {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.slick-prev.slick-arrow::before,
+.slick-next.slick-arrow::before {
+  display: none;
+}
+
+.slick-prev img,
+.slick-next img {
+  display: block;
+  width: 56px !important;
+  height: 56px;
+}
+
+.slick-list {
+  margin: 0 24px !important;
+}
+
+.slick-next.slick-arrow,
+.slick-prev.slick-arrow {
+  width: 56px;
+}
+
 /* Dots */
 .slick-dots {
+  position: relative !important;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 24px !important;
+  bottom: 0 !important;
 }
 
 .slick-dots li button:before {
-  font-size: 12px;
-  color: #bbb;
+  font-size: 12px !important;
+  color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #000; /* Màu dots khi được active */
+  color: #fff !important; /* Màu dots khi được active */
 }
 
 /* countdown */
 
 .countdown-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  /* padding: 48px; */
   background-image: url("./image/BG_countdown.png");
   background-repeat: no-repeat;
   margin: 32px 0;
@@ -341,12 +388,16 @@ ul {
   background-position: center;
   width: 522px;
   height: 118px;
+  line-height: normal;
+  padding: 24px 60px;
 }
 
 .countdown-item {
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .countdown-number {
@@ -365,6 +416,7 @@ ul {
   font-family: "SVN-Sofia Pro", sans-serif;
   font-size: 14px;
   letter-spacing: 2.1px;
+  line-height: normal;
 }
 
 .countdown-separator {
@@ -372,7 +424,10 @@ ul {
   font-weight: bold;
   color: white;
   font-family: "UTM Eremitage", sans-serif;
-  margin-left: 16px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -16px;
 }
 
 /* register */
